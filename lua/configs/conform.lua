@@ -4,6 +4,7 @@ local options = {
     -- css = { "prettier" },
     -- html = { "prettier" },
     kotlin = { "ktlint" },
+    scala = { "scalafmt" },
   },
 
   format_on_save = {
