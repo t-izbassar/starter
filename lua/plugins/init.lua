@@ -88,6 +88,10 @@ return {
         map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
         map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
 
+        map("n", "<leader>ws", function()
+          require("metals").hover_worksheet()
+        end, opts "Metals hover worksheet")
+
         map("n", "<leader>wl", function()
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, opts "List workspace folders")
@@ -100,6 +104,27 @@ return {
 
         map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
         map("n", "gr", vim.lsp.buf.references, opts "Show references")
+        map("n", "gds", vim.lsp.buf.document_symbol, opts "Document symbol")
+        map("n", "gws", vim.lsp.buf.workspace_symbol, opts "Workspace symbol")
+
+        map("n", "<leader>aa", vim.diagnostic.setqflist, opts "All workspace diagnostics")
+        map("n", "<leader>ae", function()
+          vim.diagnostic.setqflist { severity = "ERROR" }
+        end, opts "All workspace errors")
+
+        map("n", "<leader>aw", function()
+          vim.diagnostic.setqflist { severity = "WARN" }
+        end, opts "All workspace warnings")
+
+        map("n", "<leader>d", vim.diagnostic.setloclist, opts "Buffer diagnostics only")
+
+        map("n", "[c", function()
+          vim.diagnostic.goto_prev { wrap = false }
+        end, opts "Go to previous diagnostic in current buffer")
+
+        map("n", "]c", function()
+          vim.diagnostic.goto_next { wrap = false }
+        end, opts "Go to next diagnostic in current buffer")
 
         -- DAP mappings with descriptions
         map("n", "<leader>dc", function()
