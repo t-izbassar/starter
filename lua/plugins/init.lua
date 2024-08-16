@@ -126,6 +126,8 @@ return {
           vim.diagnostic.goto_next { wrap = false }
         end, opts "Go to next diagnostic in current buffer")
 
+        map("n", "<leader>fl", vim.lsp.buf.format, opts "Format using lsp")
+
         -- DAP mappings with descriptions
         map("n", "<leader>dc", function()
           require("dap").continue()
