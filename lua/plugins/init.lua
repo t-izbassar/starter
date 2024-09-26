@@ -105,7 +105,7 @@ return {
 
         map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
         map("n", "gr", vim.lsp.buf.references, opts "Show references")
-        map("n", "gds", vim.lsp.buf.document_symbol, opts "Document symbol")
+        map("n", "gwl", vim.lsp.buf.document_symbol, opts "Document symbol")
         map("n", "gws", vim.lsp.buf.workspace_symbol, opts "Workspace symbol")
 
         map("n", "<leader>aa", vim.diagnostic.setqflist, opts "All workspace diagnostics")
