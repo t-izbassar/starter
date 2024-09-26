@@ -5,6 +5,7 @@ local options = {
     -- html = { "prettier" },
     kotlin = { "ktlint" },
     scala = { lsp_format = "prefer" },
+    rust = { "rustfmt" },
   },
 
   format_on_save = {

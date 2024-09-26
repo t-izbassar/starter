@@ -24,6 +24,7 @@ return {
         "css",
         "kotlin",
         "scala",
+        "rust",
       },
     },
   },
